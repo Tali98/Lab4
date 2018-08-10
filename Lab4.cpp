@@ -125,7 +125,7 @@ int main(){
 			PrintMatriz(nueva,size_new);
 			int respuesta=0;
 			if(size_new==2){
-				respuesta = nueva[0][0] * nueva[1][1] - nueva[0][1]*nueva[1][0];
+				respuesta = matrix[first][second];
 				if((first%2!=0 && second%2!=0) || (first%2==0 && second%2==0)){
 					respuesta = respuesta*-1;
 				}else{
@@ -238,11 +238,15 @@ int main(){
 
 
 			       }
-			       for(int i = 0 ; i < 8; i++){
-			       		for(int b = 0; b < 8; b++){
-						if( i == cord1){
-							for ( int b = 
-						}
+			       for(int i = 0 ; i < 8 ; i++){
+			       		for(int b = 0 ; b < 8 ; b++){
+						if(matriz[i][b]=='*'){
+							for(int c = i ; c < cord1 ; c++){
+								for (int d = b ; b < cord2 ; d++){
+									matriz[c][d]='*';
+								}
+							}
+								}
 					}
 			       }
 			       PrintMatriz(matriz,8);
